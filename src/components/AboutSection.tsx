@@ -11,20 +11,18 @@ const AboutSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-10">
-          {/* Left side - Bottle with QR Code */}
           <div className="md:w-1/2 relative animate-float">
             <QRCodeBottle />
           </div>
 
-          {/* Right side - Text */}
           <div className="md:w-1/2 mt-10 md:mt-0">
             <div className="bg-gradient-to-br from-white to-jalseva-gray p-8 rounded-xl shadow-sm">
               <h3 className="text-2xl font-montserrat font-semibold mb-4">Water With Purpose</h3>
               <p className="text-lg font-inter text-gray-700 mb-6 leading-relaxed">
-                JalSeva blends brand visibility with humanity. Through CSR sponsorships, we distribute clean drinking water to the people who need it most — carrying your brand message along with it.
+                JalSeva blends brand visibility with humanity. Through sponsorships, we distribute clean drinking water to the people who need it most — carrying your brand message along with it.
               </p>
               <p className="text-lg font-inter text-gray-700 leading-relaxed">
-                Our innovative model creates a win-win situation where companies fulfill their CSR obligations while making a tangible difference in communities that lack access to clean water.
+                Our innovative model creates a win-win situation where companies fulfill their social responsibility goals while making a tangible difference in communities that lack access to clean water.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4">

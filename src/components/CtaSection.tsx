@@ -11,7 +11,6 @@ const CtaSection = () => {
             </p>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-white rounded-xl shadow-xl p-8">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -66,7 +65,7 @@ const CtaSection = () => {
                   name="message"
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jalseva-blue focus:border-transparent transition"
-                  placeholder="Tell us about your CSR goals and requirements"
+                  placeholder="Tell us about your social responsibility goals and requirements"
                 ></textarea>
               </div>
 
@@ -92,40 +91,6 @@ const CtaSection = () => {
                 </button>
               </div>
             </form>
-          </div>
-
-          {/* Additional Contact Info */}
-          <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white/10 p-6 rounded-lg">
-              <div className="text-white text-3xl mb-3">📍</div>
-              <h3 className="text-white font-montserrat font-semibold mb-1">Visit Us</h3>
-              <p className="text-white/80 font-inter">Pune, India</p>
-            </div>
-            <div className="bg-white/10 p-6 rounded-lg">
-              <div className="text-white text-3xl mb-3">📧</div>
-              <h3 className="text-white font-montserrat font-semibold mb-1">Email Us</h3>
-              <p className="text-white/80 font-inter">rishi_master@proton.me</p>
-            </div>
-            <div className="bg-white/10 p-6 rounded-lg">
-              <div className="text-white text-3xl mb-3">📱</div>
-              <h3 className="text-white font-montserrat font-semibold mb-1">Follow Us</h3>
-              <div className="flex justify-center space-x-4 mt-2">
-                <a href="#" className="text-white hover:text-white/80">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </a>
-                <a href="#" className="text-white hover:text-white/80">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

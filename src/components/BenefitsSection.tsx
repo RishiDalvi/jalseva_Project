@@ -4,8 +4,8 @@ import { CheckCircle } from 'lucide-react';
 const BenefitsSection = () => {
   const benefits = [
     {
-      title: 'CSR Fulfillment',
-      description: 'Meet your corporate social responsibility goals through impactful water distribution.'
+      title: 'Social Responsibility Fulfillment',
+      description: 'Meet your company\'s social responsibility goals through impactful water distribution.'
     },
     {
       title: 'Hyperlocal Advertising',
@@ -40,7 +40,6 @@ const BenefitsSection = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div 
@@ -60,14 +59,13 @@ const BenefitsSection = () => {
           ))}
         </div>
 
-        {/* Testimonial Preview */}
         <div className="mt-16 bg-gradient-to-r from-jalseva-blue-light/20 to-jalseva-blue/20 p-8 rounded-xl">
           <p className="text-xl font-inter text-gray-800 italic text-center">
-            "JalSeva has revolutionized how we approach our CSR initiatives. The impact we've made together is truly remarkable."
+            "Partnering with JalSeva helped us fulfill our social responsibility goals while deeply connecting with people."
           </p>
           <div className="mt-4 text-center">
             <p className="font-semibold font-montserrat">Marketing Director</p>
-            <p className="text-sm text-gray-600">Major FMCG Brand</p>
+            <p className="text-sm text-gray-600">Major Company</p>
           </div>
         </div>
       </div>

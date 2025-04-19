@@ -18,7 +18,6 @@ const ImpactDashboardSection = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {impactData.map((item, index) => (
             <div 
@@ -38,7 +37,6 @@ const ImpactDashboardSection = () => {
           ))}
         </div>
 
-        {/* Interactive map placeholder - For illustration purposes */}
         <div className="mt-16 bg-white p-4 rounded-xl shadow-md">
           <div className="aspect-video bg-jalseva-gray/40 rounded-lg flex items-center justify-center">
             <div className="text-center">
