@@ -4,7 +4,7 @@ const HowItWorksSection = () => {
     {
       number: '01',
       title: 'Company Funds',
-      description: 'Company funds water bottle production as part of their CSR initiative.',
+      description: 'Company funds water bottle production as part of their social impact initiative.',
       icon: '💰'
     },
     {
@@ -32,7 +32,6 @@ const HowItWorksSection = () => {
           </p>
         </div>
 
-        {/* Process Steps */}
         <div className="flex flex-col md:flex-row gap-8 justify-center">
           {steps.map((step, index) => (
             <div 
@@ -70,7 +69,6 @@ const HowItWorksSection = () => {
           </div>
         </div>
 
-        {/* Call to action */}
         <div className="text-center mt-16">
           <button className="py-3 px-8 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-md transform hover:scale-105 transition-transform">
             Start Your Campaign
