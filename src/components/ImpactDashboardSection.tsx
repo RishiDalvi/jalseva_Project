@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const ImpactDashboardSection = () => {
   const impactData = [
     { label: 'Bottles Distributed', value: '100,000+', icon: '💧' },
@@ -36,24 +38,10 @@ const ImpactDashboardSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-16 bg-white p-4 rounded-xl shadow-md">
-          <div className="aspect-video bg-jalseva-gray/40 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🗺️</div>
-              <h3 className="text-xl font-semibold font-montserrat mb-2">Distribution Map</h3>
-              <p className="text-gray-600 font-inter max-w-md mx-auto">
-                Our real-time impact tracker shows where JalSeva bottles are making a difference.
-              </p>
-              <button className="mt-4 py-2 px-6 bg-jalseva-blue text-white rounded-full font-medium font-inter text-sm">
-                View Full Dashboard
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
 export default ImpactDashboardSection;
+
