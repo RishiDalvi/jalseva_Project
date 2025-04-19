@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './ui/button';
@@ -5,7 +6,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from './ui/sonner';
 
-const CtaSection = () => {
+const StartCampaignSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -15,13 +16,13 @@ const CtaSection = () => {
     
     try {
       // In a real implementation, this would send data to a backend
-      console.log('Contact form submitted:', data);
+      console.log('Campaign section submitted:', data);
       
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success message
-      toast.success("Thanks for contacting JalSeva! We'll get back to you soon.");
+      toast.success("Your campaign request has been submitted! Our team will reach out to you shortly.");
       
       // Reset form
       reset();
@@ -34,13 +35,15 @@ const CtaSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-jalseva-blue">
+    <section id="start-campaign" className="py-20 bg-green-50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4 text-white">Be the Brand That Cares</h2>
-            <p className="text-xl font-inter text-white/90">
-              Join our mission to hydrate the nation while amplifying your brand.
+            <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4 text-jalseva-blue">
+              Start Your Campaign
+            </h2>
+            <p className="text-xl font-inter text-gray-700">
+              Customize your social impact campaign with JalSeva
             </p>
           </div>
 
@@ -96,37 +99,71 @@ const CtaSection = () => {
               </div>
 
               <div>
+                <label htmlFor="region" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
+                  Target Region/City*
+                </label>
+                <Input
+                  id="region"
+                  type="text"
+                  {...register("region", { required: "Target region is required" })}
+                  placeholder="E.g., Pune, Mumbai, Delhi"
+                  className={errors.region ? "border-red-500" : ""}
+                />
+                {errors.region && <p className="mt-1 text-sm text-red-500">{errors.region?.message?.toString()}</p>}
+              </div>
+
+              <div>
+                <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
+                  Bottle Quantity*
+                </label>
+                <Input
+                  id="quantity"
+                  type="number"
+                  {...register("quantity", { required: "Quantity is required" })}
+                  placeholder="E.g., 1000"
+                  className={errors.quantity ? "border-red-500" : ""}
+                />
+                {errors.quantity && <p className="mt-1 text-sm text-red-500">{errors.quantity?.message?.toString()}</p>}
+              </div>
+
+              <div>
+                <label htmlFor="audience" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
+                  Preferred Audience*
+                </label>
+                <select
+                  id="audience"
+                  {...register("audience", { required: "Audience selection is required" })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-jalseva-blue"
+                >
+                  <option value="">Select an audience</option>
+                  <option value="workers">Workers</option>
+                  <option value="students">Students</option>
+                  <option value="slum-areas">Slum Areas</option>
+                  <option value="event-goers">Event Attendees</option>
+                  <option value="general">General Public</option>
+                </select>
+                {errors.audience && <p className="mt-1 text-sm text-red-500">{errors.audience?.message?.toString()}</p>}
+              </div>
+
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
-                  Message
+                  Additional Requirements
                 </label>
                 <Textarea
                   id="message"
                   {...register("message")}
                   rows={4}
-                  placeholder="Tell us about your social responsibility goals and requirements"
+                  placeholder="Any specific requirements or questions?"
                 />
-              </div>
-
-              <div className="flex items-center">
-                <input
-                  id="consent"
-                  {...register("consent", { required: true })}
-                  type="checkbox"
-                  className="h-4 w-4 text-jalseva-blue focus:ring-jalseva-blue border-gray-300 rounded"
-                />
-                <label htmlFor="consent" className="ml-2 block text-sm text-gray-700 font-inter">
-                  I agree to receive communications from JalSeva
-                </label>
-                {errors.consent && <p className="ml-2 text-sm text-red-500">Consent is required</p>}
               </div>
 
               <div className="text-center">
                 <Button
                   type="submit"
-                  className="py-3 px-10 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-md transform hover:scale-105 transition-transform"
+                  className="py-3 px-10 bg-green-600 text-white rounded-full font-medium font-inter text-lg shadow-md transform hover:scale-105 transition-transform"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Contact Us"}
+                  {isSubmitting ? "Submitting..." : "Start Campaign"}
                 </Button>
               </div>
             </form>
@@ -137,4 +174,4 @@ const CtaSection = () => {
   );
 };
 
-export default CtaSection;
+export default StartCampaignSection;

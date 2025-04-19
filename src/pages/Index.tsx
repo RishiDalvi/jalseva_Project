@@ -8,6 +8,7 @@ import BenefitsSection from "../components/BenefitsSection";
 import ImpactDashboardSection from "../components/ImpactDashboardSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CtaSection from "../components/CtaSection";
+import StartCampaignSection from "../components/StartCampaignSection";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import WhatsAppButton from "../components/WhatsAppButton";
@@ -44,6 +45,7 @@ const Index = () => {
       <ImpactDashboardSection />
       <TestimonialsSection />
       <CtaSection />
+      <StartCampaignSection />
       <Footer />
       <ScrollToTop />
       <WhatsAppButton />
