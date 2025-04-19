@@ -1,6 +1,12 @@
-import { Linkedin, Instagram } from 'lucide-react';
+
+import { useState } from 'react';
+import { Linkedin, Instagram, Download } from 'lucide-react';
+import { Button } from './ui/button';
+import DownloadProposalModal from './DownloadProposalModal';
 
 const Footer = () => {
+  const [isProposalModalOpen, setIsProposalModalOpen] = useState(false);
+
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -13,7 +19,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 font-inter mb-6 max-w-md">
               Providing clean, free water to people in need while offering brands a unique opportunity 
-              to fulfill CSR goals through smart advertising.
+              to fulfill social responsibility goals through smart advertising.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -66,14 +72,13 @@ const Footer = () => {
             </ul>
 
             <div className="mt-6">
-              <button className="py-2 px-4 bg-gray-800 text-white rounded-lg font-medium font-inter text-sm hover:bg-gray-700 transition-colors flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
+              <Button
+                onClick={() => setIsProposalModalOpen(true)}
+                className="py-2 px-4 bg-gray-800 text-white rounded-lg font-medium font-inter text-sm hover:bg-gray-700 transition-colors flex items-center gap-2"
+              >
+                <Download size={16} />
                 Download Proposal
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -91,6 +96,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      <DownloadProposalModal 
+        isOpen={isProposalModalOpen}
+        onClose={() => setIsProposalModalOpen(false)}
+      />
     </footer>
   );
 };
