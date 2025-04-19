@@ -1,12 +1,23 @@
 
 import { useState, useEffect } from 'react';
+import SponsorFormModal from './SponsorFormModal';
+import DownloadProposalModal from './DownloadProposalModal';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false);
+  const [isProposalModalOpen, setIsProposalModalOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const scrollToContactForm = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden water-wave">
@@ -62,10 +73,16 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="py-3 px-8 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-lg transform hover:scale-105 transition-transform">
+            <button 
+              className="py-3 px-8 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-lg transform hover:scale-105 transition-transform"
+              onClick={() => setIsSponsorModalOpen(true)}
+            >
               Become a Sponsor
             </button>
-            <button className="py-3 px-8 bg-white text-jalseva-blue rounded-full font-medium font-inter text-lg shadow-lg transform hover:scale-105 transition-transform">
+            <button 
+              className="py-3 px-8 bg-white text-jalseva-blue rounded-full font-medium font-inter text-lg shadow-lg transform hover:scale-105 transition-transform"
+              onClick={() => setIsProposalModalOpen(true)}
+            >
               Get a Proposal
             </button>
           </div>
@@ -91,6 +108,17 @@ const HeroSection = () => {
           />
         </svg>
       </div>
+
+      {/* Modals */}
+      <SponsorFormModal 
+        isOpen={isSponsorModalOpen} 
+        onClose={() => setIsSponsorModalOpen(false)} 
+      />
+      
+      <DownloadProposalModal 
+        isOpen={isProposalModalOpen} 
+        onClose={() => setIsProposalModalOpen(false)} 
+      />
     </div>
   );
 };

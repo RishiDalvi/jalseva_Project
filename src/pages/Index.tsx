@@ -10,6 +10,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import CtaSection from "../components/CtaSection";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Index = () => {
   // Smooth scroll implementation
@@ -45,6 +46,7 @@ const Index = () => {
       <CtaSection />
       <Footer />
       <ScrollToTop />
+      <WhatsAppButton />
     </div>
   );
 };
