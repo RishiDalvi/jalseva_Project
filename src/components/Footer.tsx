@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Linkedin, Instagram, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -59,8 +58,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-jalseva-blue mr-2">📧</span>
-                <a href="mailto:Contact.jalseva@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-                  Contact.jalseva@gmail.com
+                <a 
+                  href="mailto:contact.jalseva@gmail.com" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  contact.jalseva@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
