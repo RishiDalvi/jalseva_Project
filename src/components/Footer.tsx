@@ -1,4 +1,3 @@
-
 import { Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -6,7 +5,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-10">
-          {/* Logo & Mission */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <h2 className="text-2xl font-montserrat font-bold">
@@ -35,7 +33,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-montserrat font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 font-inter">
@@ -47,7 +44,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-lg font-montserrat font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2 font-inter">
@@ -57,13 +53,18 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-jalseva-blue mr-2">📧</span>
-                <a href="mailto:rishi_master@proton.me" className="text-gray-400 hover:text-white transition-colors">
-                  rishi_master@proton.me
+                <a href="mailto:Contact.jalseva@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  Contact.jalseva@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start">
+                <span className="text-jalseva-blue mr-2">📱</span>
+                <a href="tel:+919284155938" className="text-gray-400 hover:text-white transition-colors">
+                  +91 9284155938
                 </a>
               </li>
             </ul>
 
-            {/* Download Proposal */}
             <div className="mt-6">
               <button className="py-2 px-4 bg-gray-800 text-white rounded-lg font-medium font-inter text-sm hover:bg-gray-700 transition-colors flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
@@ -77,7 +78,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Footer */}
         <div className="pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm font-inter mb-4 md:mb-0">
