@@ -1,4 +1,3 @@
-
 const HowItWorksSection = () => {
   const steps = [
     {
@@ -20,6 +19,13 @@ const HowItWorksSection = () => {
       icon: '🚚'
     }
   ];
+
+  const scrollToCampaignForm = () => {
+    const campaignSection = document.getElementById('start-campaign');
+    if (campaignSection) {
+      campaignSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="how-it-works" className="py-20 bg-jalseva-gray">
@@ -70,7 +76,10 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="py-3 px-8 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-md transform hover:scale-105 transition-transform">
+          <button 
+            onClick={scrollToCampaignForm}
+            className="py-3 px-8 bg-jalseva-blue text-white rounded-full font-medium font-inter text-lg shadow-md transform hover:scale-105 transition-transform"
+          >
             Start Your Campaign
           </button>
         </div>
