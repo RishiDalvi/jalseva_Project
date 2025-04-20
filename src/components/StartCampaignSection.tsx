@@ -5,7 +5,8 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from './ui/sonner';
-import { supabase } from "@/integrations/supabase/client";
+
+const FORMSPARK_ACTION_URL = "https://submit-form.com/YOUR-FORM-ID";
 
 const StartCampaignSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,57 +17,27 @@ const StartCampaignSection = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Submitting form data:", data);
-      
-      // First, save to the database
-      const { error: dbError } = await supabase
-        .from('campaign_submissions')
-        .insert([{
-          name: data.name,
-          email: data.email,
-          company: data.company,
-          phone: data.phone || null,
-          region: data.region,
-          quantity: parseInt(data.quantity),
-          audience: data.audience,
-          start_date: data.startDate || null,
-          message: data.message || null
-        }]);
-
-      if (dbError) {
-        console.error('Database error:', dbError);
-        throw new Error('Failed to save submission to database');
-      }
-      
-      console.log("Database insertion successful");
-
-      // Then, trigger the email notification
-      console.log("Calling edge function for email notification");
-      const response = await supabase.functions.invoke('handle-campaign-submission', {
-        body: {
-          name: data.name,
-          email: data.email,
-          company: data.company,
-          phone: data.phone || null,
-          region: data.region,
-          quantity: parseInt(data.quantity),
-          audience: data.audience,
-          startDate: data.startDate || null,
-          message: data.message || null
-        }
+      const response = await fetch(FORMSPARK_ACTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          _email: {
+            from: data.email,
+            subject: `New Campaign Request from ${data.company}`,
+            to: "connect.team.jalseva@gmail.com"
+          }
+        }),
       });
 
-      console.log("Edge function response:", response);
-      
-      if (response.error) {
-        console.error('Function error:', response.error);
-        throw new Error('Failed to send notification email');
+      if (!response.ok) {
+        throw new Error('Form submission failed');
       }
       
-      // Show success message
       toast.success("Your campaign request has been submitted! Our team will reach out to you shortly.");
-      
-      // Reset form
       reset();
     } catch (error) {
       console.error('Submission error:', error);
@@ -192,6 +163,8 @@ const StartCampaignSection = () => {
                   <option value="">Select an audience</option>
                   <option value="workers">Workers</option>
                   <option value="students">Students</option>
+                  <option value="farmers">Farmers</option>
+                  <option value="patients">Patients</option>
                   <option value="slum-areas">Slum Areas</option>
                   <option value="event-goers">Event Attendees</option>
                   <option value="general">General Public</option>
