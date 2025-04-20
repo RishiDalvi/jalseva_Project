@@ -30,22 +30,24 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // PDF URL from Supabase
       const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/JalSeva_Campaign_Proposal.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzYyNjVhN2UwLWRkYmYtNGUzMS04Mzc0LTdjOWEzMDAzNjY0MyJ9.eyJ1cmwiOiJwZGYvSmFsU2V2YV9DYW1wYWlnbl9Qcm9wb3NhbC5wZGYiLCJpYXQiOjE3NDUxMzg4MTQsImV4cCI6MTc3NjY3NDgxNH0.5wAN3BNRJJD1u2Dc8Eq6u85hqPfwIDMARG6Rs7ULxVI";
       
-      // Create iframe for automatic download
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
+      // Create a direct download link - more reliable method
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.setAttribute('download', 'JalSeva_Campaign_Proposal.pdf');
+      link.setAttribute('target', '_blank');
+      link.style.display = 'none';
+      document.body.appendChild(link);
       
-      // Set up iframe to trigger download
-      if (iframe.contentWindow) {
-        iframe.contentWindow.location.href = pdfUrl;
-      }
+      // Trigger download directly
+      link.click();
       
-      // Remove iframe after a short delay
+      // Remove the link element after download is initiated
       setTimeout(() => {
-        document.body.removeChild(iframe);
-      }, 2000);
+        document.body.removeChild(link);
+      }, 1000);
       
       // Show success message
       toast.success("Thank you! Your download has started.");
@@ -101,4 +103,3 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
 };
 
 export default DownloadProposalModal;
-
