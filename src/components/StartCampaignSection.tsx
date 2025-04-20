@@ -16,6 +16,8 @@ const StartCampaignSection = () => {
     setIsSubmitting(true);
     
     try {
+      console.log("Submitting form data:", data);
+      
       // First, save to the database
       const { error: dbError } = await supabase
         .from('campaign_submissions')
@@ -35,8 +37,11 @@ const StartCampaignSection = () => {
         console.error('Database error:', dbError);
         throw new Error('Failed to save submission to database');
       }
+      
+      console.log("Database insertion successful");
 
       // Then, trigger the email notification
+      console.log("Calling edge function for email notification");
       const response = await supabase.functions.invoke('handle-campaign-submission', {
         body: {
           name: data.name,
@@ -51,6 +56,8 @@ const StartCampaignSection = () => {
         }
       });
 
+      console.log("Edge function response:", response);
+      
       if (response.error) {
         console.error('Function error:', response.error);
         throw new Error('Failed to send notification email');
