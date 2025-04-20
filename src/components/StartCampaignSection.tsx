@@ -23,15 +23,18 @@ const StartCampaignSection = () => {
           name: data.name,
           email: data.email,
           company: data.company,
-          phone: data.phone,
+          phone: data.phone || null,
           region: data.region,
           quantity: parseInt(data.quantity),
           audience: data.audience,
-          start_date: data.startDate,
-          message: data.message
+          start_date: data.startDate || null,
+          message: data.message || null
         }]);
 
-      if (dbError) throw dbError;
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw new Error('Failed to save submission to database');
+      }
 
       // Then, trigger the email notification
       const response = await supabase.functions.invoke('handle-campaign-submission', {
@@ -39,16 +42,19 @@ const StartCampaignSection = () => {
           name: data.name,
           email: data.email,
           company: data.company,
-          phone: data.phone,
+          phone: data.phone || null,
           region: data.region,
           quantity: parseInt(data.quantity),
           audience: data.audience,
-          startDate: data.startDate,
-          message: data.message
+          startDate: data.startDate || null,
+          message: data.message || null
         }
       });
 
-      if (response.error) throw response.error;
+      if (response.error) {
+        console.error('Function error:', response.error);
+        throw new Error('Failed to send notification email');
+      }
       
       // Show success message
       toast.success("Your campaign request has been submitted! Our team will reach out to you shortly.");
@@ -128,6 +134,18 @@ const StartCampaignSection = () => {
               </div>
 
               <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
+                  Phone Number (optional)
+                </label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  {...register("phone")}
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div>
                 <label htmlFor="region" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
                   Target Region/City*
                 </label>
@@ -175,8 +193,20 @@ const StartCampaignSection = () => {
               </div>
 
               <div>
+                <label htmlFor="startDate" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
+                  Preferred Start Date (optional)
+                </label>
+                <Input
+                  id="startDate"
+                  type="date"
+                  {...register("startDate")}
+                  min={new Date().toISOString().split('T')[0]}
+                />
+              </div>
+
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-inter">
-                  Additional Requirements
+                  Additional Requirements (optional)
                 </label>
                 <Textarea
                   id="message"
