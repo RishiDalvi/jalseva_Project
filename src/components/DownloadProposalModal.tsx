@@ -48,17 +48,18 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
   };
 
   const triggerDownload = () => {
-    // In a real implementation, this would download a real PDF
-    // For now, we'll create a simple text file for demonstration
-    const element = document.createElement("a");
-    const file = new Blob([
-      "JalSeva Social Responsibility Proposal\n\nThis is a placeholder for the actual PDF content."
-    ], {type: 'text/plain'});
-    element.href = URL.createObjectURL(file);
-    element.download = "JalSeva_Proposal.txt";
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+    const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/JalSeva_Campaign_Proposal.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzYyNjVhN2UwLWRkYmYtNGUzMS04Mzc0LTdjOWEzMDAzNjY0MyJ9.eyJ1cmwiOiJwZGYvSmFsU2V2YV9DYW1wYWlnbl9Qcm9wb3NhbC5wZGYiLCJpYXQiOjE3NDUxMzg4MTQsImV4cCI6MTc3NjY3NDgxNH0.5wAN3BNRJJD1u2Dc8Eq6u85hqPfwIDMARG6Rs7ULxVI";
+    
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.target = '_blank';
+    link.download = 'JalSeva_Campaign_Proposal.pdf';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
