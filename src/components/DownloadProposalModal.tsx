@@ -5,6 +5,13 @@ import Modal from './ui/modal';
 import { Button } from './ui/button';
 import { toast } from './ui/sonner';
 import { Input } from './ui/input';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabase = createClient(
+  'https://viblobbjoqxmucpfvxln.supabase.co', 
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'  // Your Supabase anon key
+);
 
 interface DownloadProposalModalProps {
   isOpen: boolean;
@@ -24,8 +31,16 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
     setIsSubmitting(true);
     
     try {
-      // In a real implementation, this would send data to a backend
-      console.log('Email for download:', data);
+      // Save email to Supabase
+      const { error } = await supabase
+        .from('proposal_downloads')
+        .insert({ email: data.email });
+
+      if (error) {
+        toast.error("Failed to save email. Please try again.");
+        console.error(error);
+        return;
+      }
       
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -33,7 +48,7 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       // PDF URL from Supabase
       const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/JalSeva_Campaign_Proposal.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzYyNjVhN2UwLWRkYmYtNGUzMS04Mzc0LTdjOWEzMDAzNjY0MyJ9.eyJ1cmwiOiJwZGYvSmFsU2V2YV9DYW1wYWlnbl9Qcm9wb3NhbC5wZGYiLCJpYXQiOjE3NDUxMzg4MTQsImV4cCI6MTc3NjY3NDgxNH0.5wAN3BNRJJD1u2Dc8Eq6u85hqPfwIDMARG6Rs7ULxVI";
       
-      // Create a direct download link - more reliable method
+      // Create a direct download link
       const link = document.createElement('a');
       link.href = pdfUrl;
       link.setAttribute('download', 'JalSeva_Campaign_Proposal.pdf');
@@ -50,7 +65,7 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       }, 1000);
       
       // Show success message
-      toast.success("Thank you! Your download has started.");
+      toast.success("Thank you! Your download has started and email saved.");
       
       // Reset form and close modal
       reset();
