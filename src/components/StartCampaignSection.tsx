@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from './ui/sonner';
+import { supabase } from "@/integrations/supabase/client";
 
 const StartCampaignSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,11 +16,39 @@ const StartCampaignSection = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real implementation, this would send data to a backend
-      console.log('Campaign section submitted:', data);
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // First, save to the database
+      const { error: dbError } = await supabase
+        .from('campaign_submissions')
+        .insert([{
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          region: data.region,
+          quantity: parseInt(data.quantity),
+          audience: data.audience,
+          start_date: data.startDate,
+          message: data.message
+        }]);
+
+      if (dbError) throw dbError;
+
+      // Then, trigger the email notification
+      const response = await supabase.functions.invoke('handle-campaign-submission', {
+        body: {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          region: data.region,
+          quantity: parseInt(data.quantity),
+          audience: data.audience,
+          startDate: data.startDate,
+          message: data.message
+        }
+      });
+
+      if (response.error) throw response.error;
       
       // Show success message
       toast.success("Your campaign request has been submitted! Our team will reach out to you shortly.");
@@ -27,8 +56,8 @@ const StartCampaignSection = () => {
       // Reset form
       reset();
     } catch (error) {
+      console.error('Submission error:', error);
       toast.error("Something went wrong. Please try again.");
-      console.error(error);
     } finally {
       setIsSubmitting(false);
     }

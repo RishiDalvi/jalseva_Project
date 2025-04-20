@@ -9,7 +9,48 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      campaign_submissions: {
+        Row: {
+          audience: string
+          company: string
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          quantity: number
+          region: string
+          start_date: string | null
+        }
+        Insert: {
+          audience: string
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          quantity: number
+          region: string
+          start_date?: string | null
+        }
+        Update: {
+          audience?: string
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          quantity?: number
+          region?: string
+          start_date?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
