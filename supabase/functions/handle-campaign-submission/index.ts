@@ -48,8 +48,8 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "JalSeva Campaigns <onboarding@resend.dev>",
-      to: ["connect.team.jalseva@gmail.com"], // Updated to your email address
+      from: "JalSeva Campaigns <campaigns@resend.dev>",
+      to: ["connect.team.jalseva@gmail.com"],
       subject: `New Campaign Request from ${submission.company}`,
       html: emailHtml,
       reply_to: submission.email
