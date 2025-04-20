@@ -6,15 +6,18 @@ import { ScanQrCode } from 'lucide-react';
 const QRCodeBottle = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleQRClick = () => {
-    toast.success("Scanning QR code will direct to the CSR impact report");
+  const handleQRHover = () => {
+    toast.success("This bottle links to the CSR impact report");
   };
 
   return (
     <div className="relative w-full max-w-md mx-auto">
       <div 
         className="relative h-[600px] transition-transform duration-300 ease-in-out transform hover:scale-105"
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={() => {
+          setIsHovered(true);
+          handleQRHover();
+        }}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Background Image */}
@@ -27,12 +30,9 @@ const QRCodeBottle = () => {
         {/* Interactive QR Code Overlay */}
         {isHovered && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300">
-            <div 
-              className="bg-white p-4 rounded-lg shadow-lg cursor-pointer transform hover:scale-110 transition-transform"
-              onClick={handleQRClick}
-            >
+            <div className="bg-white p-4 rounded-lg shadow-lg">
               <ScanQrCode className="w-12 h-12 text-jalseva-blue" />
-              <p className="text-sm font-medium text-center mt-2">Scan QR Code</p>
+              <p className="text-sm font-medium text-center mt-2">CSR Impact Report</p>
             </div>
           </div>
         )}
