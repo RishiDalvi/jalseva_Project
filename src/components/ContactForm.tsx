@@ -1,10 +1,28 @@
 
-const ContactForm = () => {
+import React from 'react';
+
+interface ContactFormProps {
+  onSuccess?: () => void;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
+  const handleSubmit = (e: React.FormEvent) => {
+    // If onSuccess is provided, call it after form submission
+    if (onSuccess) {
+      // We're not preventing default because we want the form to submit naturally
+      // This will execute after the form begins submission
+      setTimeout(() => {
+        onSuccess();
+      }, 100);
+    }
+  };
+
   return (
     <form
       action="https://submit-form.com/sIiObPlqL"
       method="POST"
       className="space-y-6"
+      onSubmit={handleSubmit}
     >
       <div className="grid md:grid-cols-2 gap-6">
         <div>
