@@ -108,3 +108,4 @@ const SponsorFormModal = ({ isOpen, onClose }: SponsorFormProps) => {
 };
 
 export default SponsorFormModal;
+
