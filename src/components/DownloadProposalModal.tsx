@@ -36,6 +36,16 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
         return;
       }
 
+      // Send proposal email
+      const { error: emailError } = await supabase.functions.invoke('send-proposal-email', {
+        body: { email: data.email }
+      });
+
+      if (emailError) {
+        console.error('Email error:', emailError);
+        toast.error("Email could not be sent. Please contact us directly.");
+      }
+
       // Updated PDF URL from your connected Supabase project
       const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/Jalseva%20Proposal.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iY2Q0ZmQ4OC03ODkyLTQ3MjYtYjkxZS01NDc4YmMzZDAxNzYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwZGYvSmFsc2V2YSBQcm9wb3NhbC5wZGYiLCJpYXQiOjE3NTE5Nzk1MjUsImV4cCI6MTc4MzUxNTUyNX0.YiZSqxgpHgloTz7-Yu7WPrsNOyaTxHFlBmidghfLw9c";
       
@@ -56,7 +66,7 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       }, 100);
       
       // Show success message
-      toast.success("Thank you! Your download has started and email has been saved.");
+      toast.success("Thank you! Your download has started and we've sent the proposal to your email.");
       
       // Reset form and close modal
       reset();
