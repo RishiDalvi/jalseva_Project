@@ -3,15 +3,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from './ui/modal';
 import { Button } from './ui/button';
-import { toast } from './ui/sonner';
+import { toast } from 'sonner';
 import { Input } from './ui/input';
-import { createClient } from '@supabase/supabase-js';
-
-// Initialize Supabase client
-const supabase = createClient(
-  'https://viblobbjoqxmucpfvxln.supabase.co', 
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'  // Your Supabase anon key
-);
+import { supabase } from '@/integrations/supabase/client';
 
 interface DownloadProposalModalProps {
   isOpen: boolean;
@@ -31,27 +25,13 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
     setIsSubmitting(true);
     
     try {
-      // Save email to Supabase
-      const { error } = await supabase
-        .from('proposal_downloads')
-        .insert({ email: data.email });
-
-      if (error) {
-        toast.error("Failed to save email. Please try again.");
-        console.error(error);
-        return;
-      }
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // PDF URL from Supabase
-      const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/JalSeva_Campaign_Proposal.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzYyNjVhN2UwLWRkYmYtNGUzMS04Mzc0LTdjOWEzMDAzNjY0MyJ9.eyJ1cmwiOiJwZGYvSmFsU2V2YV9DYW1wYWlnbl9Qcm9wb3NhbC5wZGYiLCJpYXQiOjE3NDUxMzg4MTQsImV4cCI6MTc3NjY3NDgxNH0.5wAN3BNRJJD1u2Dc8Eq6u85hqPfwIDMARG6Rs7ULxVI";
+      // Updated PDF URL
+      const pdfUrl = "https://hvhfqpboekuayugcjjdk.supabase.co/storage/v1/object/sign/proposaldoc/Jalseva%20Proposal.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zZTJhOWZjMC02NjEyLTRhMjAtYjczMi1iNGY5ODE3OGM2YzMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9wb3NhbGRvYy9KYWxzZXZhIFByb3Bvc2FsLnBkZiIsImlhdCI6MTc1MTk3OTIwOCwiZXhwIjoxNzgzNTE1MjA4fQ.skRMt7atWvNLFt5xiAbaDrKSDPPmpU0h38A9_Ec-MyQ";
       
       // Create a direct download link
       const link = document.createElement('a');
       link.href = pdfUrl;
-      link.setAttribute('download', 'JalSeva_Campaign_Proposal.pdf');
+      link.setAttribute('download', 'Jalseva_Proposal.pdf');
       link.setAttribute('target', '_blank');
       link.style.display = 'none';
       document.body.appendChild(link);
@@ -62,17 +42,17 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       // Remove the link element after download is initiated
       setTimeout(() => {
         document.body.removeChild(link);
-      }, 1000);
+      }, 100);
       
       // Show success message
-      toast.success("Thank you! Your download has started and email saved.");
+      toast.success("Thank you! Your download has started.");
       
       // Reset form and close modal
       reset();
       onClose();
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
-      console.error(error);
+      console.error('Download error:', error);
     } finally {
       setIsSubmitting(false);
     }
