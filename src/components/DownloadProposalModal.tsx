@@ -25,6 +25,8 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
     setIsSubmitting(true);
     
     try {
+      console.log('Starting form submission for email:', data.email);
+      
       // Save email to database
       const { error } = await supabase
         .from('proposal_downloads')
@@ -33,18 +35,26 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       if (error) {
         console.error('Database error:', error);
         toast.error("Failed to save email. Please try again.");
+        setIsSubmitting(false);
         return;
       }
 
+      console.log('Email saved to database successfully');
+
       // Send proposal email
-      const { error: emailError } = await supabase.functions.invoke('send-proposal-email', {
+      console.log('Attempting to send email...');
+      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-proposal-email', {
         body: { email: data.email }
       });
 
       if (emailError) {
-        console.error('Email error:', emailError);
+        console.error('Email function error:', emailError);
         toast.error("Email could not be sent. Please contact us directly.");
+        setIsSubmitting(false);
+        return;
       }
+
+      console.log('Email function response:', emailData);
 
       // Updated PDF URL from your connected Supabase project
       const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/Jalseva%20Proposal.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iY2Q0ZmQ4OC03ODkyLTQ3MjYtYjkxZS01NDc4YmMzZDAxNzYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwZGYvSmFsc2V2YSBQcm9wb3NhbC5wZGYiLCJpYXQiOjE3NTE5Nzk1MjUsImV4cCI6MTc4MzUxNTUyNX0.YiZSqxgpHgloTz7-Yu7WPrsNOyaTxHFlBmidghfLw9c";
@@ -72,7 +82,7 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       reset();
       onClose();
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Unexpected error:', error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
