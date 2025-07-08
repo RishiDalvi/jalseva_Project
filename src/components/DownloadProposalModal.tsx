@@ -25,8 +25,19 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
     setIsSubmitting(true);
     
     try {
-      // Updated PDF URL
-      const pdfUrl = "https://hvhfqpboekuayugcjjdk.supabase.co/storage/v1/object/sign/proposaldoc/Jalseva%20Proposal.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zZTJhOWZjMC02NjEyLTRhMjAtYjczMi1iNGY5ODE3OGM2YzMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9wb3NhbGRvYy9KYWxzZXZhIFByb3Bvc2FsLnBkZiIsImlhdCI6MTc1MTk3OTIwOCwiZXhwIjoxNzgzNTE1MjA4fQ.skRMt7atWvNLFt5xiAbaDrKSDPPmpU0h38A9_Ec-MyQ";
+      // Save email to database
+      const { error } = await supabase
+        .from('proposal_downloads')
+        .insert({ email: data.email });
+
+      if (error) {
+        console.error('Database error:', error);
+        toast.error("Failed to save email. Please try again.");
+        return;
+      }
+
+      // Updated PDF URL from your connected Supabase project
+      const pdfUrl = "https://viblobbjoqxmucpfvxln.supabase.co/storage/v1/object/sign/pdf/Jalseva%20Proposal.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iY2Q0ZmQ4OC03ODkyLTQ3MjYtYjkxZS01NDc4YmMzZDAxNzYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwZGYvSmFsc2V2YSBQcm9wb3NhbC5wZGYiLCJpYXQiOjE3NTE5Nzk1MjUsImV4cCI6MTc4MzUxNTUyNX0.YiZSqxgpHgloTz7-Yu7WPrsNOyaTxHFlBmidghfLw9c";
       
       // Create a direct download link
       const link = document.createElement('a');
@@ -36,7 +47,7 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       link.style.display = 'none';
       document.body.appendChild(link);
       
-      // Trigger download directly
+      // Trigger download automatically
       link.click();
       
       // Remove the link element after download is initiated
@@ -45,14 +56,14 @@ const DownloadProposalModal = ({ isOpen, onClose }: DownloadProposalModalProps) 
       }, 100);
       
       // Show success message
-      toast.success("Thank you! Your download has started.");
+      toast.success("Thank you! Your download has started and email has been saved.");
       
       // Reset form and close modal
       reset();
       onClose();
     } catch (error) {
+      console.error('Error:', error);
       toast.error("Something went wrong. Please try again.");
-      console.error('Download error:', error);
     } finally {
       setIsSubmitting(false);
     }
