@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p>We're excited to share our social responsibility proposal with you.</p>
         <p>JalSeva provides clean, free water to people in need while offering brands a unique opportunity to fulfill their social responsibility goals through smart advertising.</p>
         <p>Please find our detailed proposal attached to this email.</p>
-        <p>If you have any questions or would like to discuss a partnership, please don't hesitate to reach out to us at contact.jalseva@gmail.com or call us at +91 9284155938.</p>
+        <p>If you have any questions or would like to discuss a partnership, please don't hesitate to reach out to us at connect.team.jalseva@gmail.com or call us at +91 9284155938.</p>
         <p>Best regards,<br>The JalSeva Team</p>
       `,
       attachments: [

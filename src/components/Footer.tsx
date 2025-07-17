@@ -59,10 +59,11 @@ const Footer = () => {
               <li className="flex items-start">
                 <span className="text-jalseva-blue mr-2">📧</span>
                 <a 
-                  href="mailto:contact.jalseva@gmail.com" 
+                  href="mailto:connect.team.jalseva@gmail.com" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  contact.jalseva@gmail.com
+                  connect.team.jalseva@gmail.com
+                  
                 </a>
               </li>
               <li className="flex items-start">
