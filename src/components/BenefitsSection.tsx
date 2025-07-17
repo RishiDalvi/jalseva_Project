@@ -33,7 +33,9 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-2">Why Choose JalSeva</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-2">Why Choose
+            <span className="text-jalseva-blue bg-white/80 px-3 py-1 rounded-lg">Jal</span>Seva
+          </h2>
           <div className="w-20 h-1 bg-jalseva-blue mx-auto mb-4"></div>
           <p className="text-lg font-inter text-gray-700 max-w-2xl mx-auto">
             We offer a unique blend of social impact and brand visibility that traditional advertising cannot match.

@@ -67,7 +67,7 @@ const TrustedBrandsSection = () => {
         {/* Trust Indicator */}
         <div className="text-center mt-8">
           <p className="text-sm font-inter text-gray-500">
-            Join 50+ leading brands making a difference with JALseva
+            Join 50+ leading brands making a difference with JalSeva
           </p>
         </div>
       </div>
