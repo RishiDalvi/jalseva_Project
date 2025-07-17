@@ -33,7 +33,7 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-2">Why Choose
+          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-2">Why Choose 
             <span className="text-jalseva-blue"> Jal</span>Seva
           </h2>
           <div className="w-20 h-1 bg-jalseva-blue mx-auto mb-4"></div>
