@@ -286,6 +286,6 @@ This project is licensed under the MIT License.
 
 ## 📬 Connect With Us
 
-**Founder**: Rushikesh Dalavi
-**Email**: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com)
+**Founder**: Rushikesh Dalavi <b><b>
+**Email**: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com) <b><b>
 **LinkedIn**:<strong><a href="https://www.linkedin.com/in/rushikesh-dalavi/">Rushikesh Dalavi</a></strong> 
