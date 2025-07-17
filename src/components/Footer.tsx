@@ -22,14 +22,18 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/rushikesh-dalavi/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-jalseva-blue transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/kaliyug.technologies/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-jalseva-blue transition-colors"
                 aria-label="Instagram"
               >
@@ -63,7 +67,7 @@ const Footer = () => {
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   connect.team.jalseva@gmail.com
-                  
+
                 </a>
               </li>
               <li className="flex items-start">
