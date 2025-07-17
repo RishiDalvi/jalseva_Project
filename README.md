@@ -43,6 +43,49 @@
 
 ---
 
+## 📁 Folder Structure
+
+```
+jalseva_Project/
+├── public/                 # Static files like images, icons, and robots.txt  
+│   ├── images/  
+│   ├── lovable-uploads/  
+│   └── favicon.ico  
+├── screenshots/            # Screenshots for README documentation  
+│   ├── landing.png  
+│   ├── about.png  
+│   ├── howItWorks.png  
+│   ├── successStories.png  
+│   ├── impactDashboard.png  
+│   └── footer.png  
+├── src/                    # Application source code  
+│   ├── assets/             # Static assets like logos, SVGs, etc.  
+│   ├── components/         # Reusable UI components (Buttons, Layouts, etc.)  
+│   ├── hooks/              # Custom React hooks  
+│   ├── integrations/       # API or third-party service integrations  
+│   ├── lib/                # Utility libraries or constants  
+│   ├── pages/              # Page-level React components  
+│   ├── App.tsx             # Main App component  
+│   ├── App.css             # Global styles  
+│   └── main.tsx            # Entry point  
+├── supabase/               # Supabase configurations and edge functions  
+│   ├── config.toml  
+│   ├── functions/  
+│   └── migrations/  
+├── index.html              # HTML template  
+├── tailwind.config.ts      # Tailwind CSS configuration  
+├── vite.config.ts          # Vite configuration file  
+├── tsconfig*.json          # TypeScript configuration files  
+├── postcss.config.js       # PostCSS config for Tailwind  
+├── package.json            # Project metadata and dependencies  
+├── bun.lockb               # Bun package lock file  
+├── eslint.config.js        # ESLint configuration  
+└── README.md               # Project documentation  
+```
+
+> 💡 This structure ensures a clean separation of concerns for scalability and maintainability.
+
+
 ## 🖼️ UI Screenshots
 
 > Here's a quick look at the platform 👇
@@ -93,111 +136,9 @@ Most organizations fund NGOs without an interactive medium to see their impact o
 - 🌍 Success stories to inspire and promote further impact.
 
 ---
+                 |
 
-## 🛠️ Project Setup – Local Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/RishiDalvi/jalseva_Project
-
-# Navigate to project directory
-cd jalseva_Project
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-
-
-
-<div align="center">
-  <img src="public/images/logo.svg" alt="JalSeva Logo" height="100" />
-  <h1 align="center">JalSeva – Empowering Impact with CSR Transparency</h1>
-  <p align="center">
-    A platform bridging <strong>businesses</strong> and <strong>nonprofits</strong> through transparent CSR fund utilization, real-time dashboards, and verifiable success stories.
-  </p>
-  <p align="center">
-    <a href="https://jalseva.netlify.app/">🌐 Visit the Live Website</a> • 
-    <a href="https://github.com/RishiDalvi/jalseva_Project">📦 GitHub Repo</a>
-  </p>
-</div>
-
----
-
-## 📸 Screenshots
-
-| Landing Page | About Us | How It Works |
-| ------------ | -------- | ------------ |
-| ![Landing](./screenshots/landing.png) | ![About](./screenshots/about.png) | ![How It Works](./screenshots/howItWorks.png) |
-
-| Success Stories | Impact Dashboard | Footer |
-| --------------- | ---------------- | ------ |
-| ![Success](./screenshots/successStories.png) | ![Impact](./screenshots/impactDashboard.png) | ![Footer](./screenshots/footer.png) |
-
----
-
-## 🚀 Project Overview
-
-**JalSeva** solves a major gap in the CSR (Corporate Social Responsibility) ecosystem. While companies contribute funds, the impact is often unclear or unverifiable. Our platform:
-
-- Ensures transparency of CSR fund usage.
-- Enables businesses to view real-time impact via a custom dashboard.
-- Allows NGOs to showcase verified success stories.
-- Offers a credible platform for stakeholders to collaborate meaningfully.
-
----
-
-## 🔧 Tech Stack
-
-| Layer         | Technology                                |
-|--------------|--------------------------------------------|
-| Frontend     | [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/) |
-| Styling      | [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.dev/) |
-| State Mgmt   | React State, useState/useEffect hooks       |
-| Assets       | Stored in `/public/images` and `/assets`   |
-| Backend      | [Supabase Functions](https://supabase.com/) |
-| Deployment   | [Netlify](https://netlify.com/)            |
-| Dev Tools    | ESLint, Prettier, PostCSS, Vite Dev Server  |
-
----
-
-## 📁 Folder Structure
-
-```bash
-jalseva_Project/
-├── public/                 # Public assets and favicons
-├── screenshots/            # Screenshots for README and docs
-├── src/
-│   ├── assets/             # Static project assets
-│   ├── components/         # UI components
-│   ├── hooks/              # Reusable React hooks
-│   ├── integrations/       # External integrations (e.g., Supabase)
-│   ├── lib/                # Utility functions
-│   ├── pages/              # Individual page routes
-│   ├── App.tsx             # App wrapper
-│   └── main.tsx            # React root
-├── supabase/               # Supabase functions and migrations
-├── tailwind.config.ts      # Tailwind configuration
-├── vite.config.ts          # Vite build configuration
-└── README.md               # You're reading it!
-
-
-
-
-
-| Feature                       | Description                                        |
-| ----------------------------- | -------------------------------------------------- |
-| 🔍 Discover Projects          | Browse live water-saving projects eligible for CSR |
-| 💸 Easy Donations             | Seamless UI for funding and collaboration          |
-| 📊 Dashboard                  | View real-time impact stats                        |
-| 🧑‍🤝‍🧑 NGO/Corporate Logins | Separate dashboards with permissions               |
-| 🌱 Sustainable Design         | Eco-themed and mobile-first UI                     |
-
-
-
-🎯 Future Scope
+## 🎯 Future Scope
 Integration with Government APIs
 
 Blockchain-based impact verification
@@ -206,23 +147,132 @@ CSR Impact Leaderboard across India
 
 Real-time Chatbot support
 
+---
+
+## ⚙️ Project Setup
+
+This project uses **Vite**, **TypeScript**, **React**, **Tailwind CSS**, and **shadcn/ui** for fast performance and modern UI development. Follow the steps below to set it up locally.
+
+---
+
+### 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js** (v18+ recommended)
+- **Bun** (optional, if using Bun for package management)  
+  👉 Install from: https://bun.sh/docs/installation
+- **Git**
+
+---
+
+### 🚀 Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/RishiDalvi/jalseva_Project.git
+cd jalseva_Project
+```
+
+2. **Install dependencies**
+
+Using Bun (preferred):
+```bash
+bun install
+```
+
+Or using npm:
+```bash
+npm install
+```
+
+3. **Start the development server**
+
+Using Bun:
+```bash
+bun run dev
+```
+
+Or using npm:
+```bash
+npm run dev
+```
+
+4. **Open in browser**
+
+Visit: [http://localhost:5173](http://localhost:5173)
+
+---
+
+### 🛠 Build for Production
+
+To generate a production-ready build:
+
+```bash
+bun run build
+# or
+npm run build
+```
+
+This will output files to the `dist/` folder.
+
+---
+
+### 🧪 Preview Build
+
+To preview the production build locally:
+
+```bash
+bun run preview
+# or
+npm run preview
+```
+
+---
+
+### 🧼 Linting
+
+To check for code quality and formatting:
+
+```bash
+bun run lint
+# or
+npm run lint
+```
+
+---
+
+### 📁 Environment Variables
+
+If required, add a `.env` file in the root directory with the following format:
+
+```
+VITE_API_URL=https://your-backend-api.com
+SUPABASE_URL=...
+SUPABASE_ANON_KEY=...
+```
+
+Ensure your keys are stored securely and never committed to GitHub.
+
+---
 
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! Feel free to fork and submit PRs.
 # Fork the project
 # Make changes
 # Push your feature branch
 # Create Pull Request
 
+---
 
-
-📃 License
+## 📃 License
 This project is licensed under the MIT License.
 
+----
 
-
-📬 Connect With Us
+## 📬 Connect With Us
 Founder: Rushikesh Dalavi
 
 Email: connect.team.jalseva@gmail.com
