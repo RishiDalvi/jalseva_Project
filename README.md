@@ -289,4 +289,8 @@ This project is licensed under the MIT License.
 **Founder: Rushikesh Dalavi**
 
 **Email: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com)**
+
 **LinkedIn:<strong><a href="https://www.linkedin.com/in/rushikesh-dalavi/">Rushikesh Dalavi</a></strong>**
+
+> ⚡ Note: Parts of this project were created with the help of AI-based coding tools (e.g., GitHub Copilot, ChatGPT,lovable). All final code was reviewed and modified by the author.
+
