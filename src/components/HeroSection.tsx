@@ -52,7 +52,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-20 text-center">
         <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
           <h1 className="text-4xl md:text-6xl font-bold font-montserrat mb-4 text-white">
-            <span className="text-jalseva-blue bg-black/80 px-3 py-1 rounded-lg">Jal</span>Seva
+            <span className="text-jalseva-blue">Jal</span>Seva
           </h1>
           <p className="text-xl md:text-2xl font-montserrat text-gray-800 mb-8 
             bg-gradient-to-r from-jalseva-blue via-jalseva-blue-dark to-jalseva-blue 

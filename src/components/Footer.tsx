@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <h2 className="text-2xl font-montserrat font-bold">
-                <span className="text-jalseva-blue">Jal</span>Seva
+                <span className="text-jalseva-blue bg-white/80 px-3 py-1 rounded-lg">Jal</span>Seva
               </h2>
             </div>
             <p className="text-gray-400 font-inter mb-6 max-w-md">
