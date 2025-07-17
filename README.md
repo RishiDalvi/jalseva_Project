@@ -1,4 +1,4 @@
-<h1 align="center">🌊 JALseva — Empowering CSR for a Better Tomorrow</h1>
+<h1 align="center">🌊 JalSeva — Empowering CSR for a Better Tomorrow</h1>
 
 <p align="center">
   <img src="https://img.shields.io/github/languages/top/RishiDalvi/jalseva_Project" alt="Top Language" />
@@ -15,7 +15,7 @@
 
 ## 🌟 Project Overview
 
-**JALseva** is a CSR (Corporate Social Responsibility)-driven initiative that bridges the gap between companies seeking meaningful social impact and water-centric community needs. Companies often spend CSR funds but struggle to measure or showcase impact — **JALseva solves this problem** by offering an end-to-end platform for project discovery, funding, tracking, and impact visualization.
+**JalSeva** is a CSR (Corporate Social Responsibility)-driven initiative that bridges the gap between companies seeking meaningful social impact and water-centric community needs. Companies often spend CSR funds but struggle to measure or showcase impact — **JALseva solves this problem** by offering an end-to-end platform for project discovery, funding, tracking, and impact visualization.
 
 ---
 
@@ -286,6 +286,6 @@ This project is licensed under the MIT License.
 
 ## 📬 Connect With Us
 
-**Founder**: Rushikesh Dalavi <b><b>
-**Email**: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com) <b><b>
+**Founder**: Rushikesh Dalavi <hr>
+**Email**: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com) <hr>
 **LinkedIn**:<strong><a href="https://www.linkedin.com/in/rushikesh-dalavi/">Rushikesh Dalavi</a></strong> 
