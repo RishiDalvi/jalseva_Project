@@ -1,7 +1,5 @@
 
 import { useState } from 'react';
-import priyaKrishnaImage from '../assets/priya-krishna.jpg';
-import pratimaGhalsasiImage from '../assets/pratima-ghalsasi.jpg';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -17,14 +15,14 @@ const TestimonialsSection = () => {
       name: "Priya Krishna",
       position: "Marketing Head",
       company: "Gigante Technologies",
-      image: priyaKrishnaImage
+      image: "/images/priya-krishna.jpg"
     },
     {
       quote: "Not only did we meet our sustainability targets, but the photo documentation provided by JalSeva added immense value to our annual report.",
       name: "Pratima Ghalsasi",
       position: "Sustainability Officer",
       company: "Global Manufacturing",
-      image: pratimaGhalsasiImage
+      image: "/images/pratima-ghalsasi.jpg"
     }
   ];
 
