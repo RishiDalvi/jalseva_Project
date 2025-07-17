@@ -15,14 +15,14 @@ const TestimonialsSection = () => {
       name: "Priya Krishna",
       position: "Marketing Head",
       company: "Gigante Technologies",
-      image: "/images/priya-krishna.jpg"
+      image: "/images/pratima-ghalsasi.jpg"
     },
     {
       quote: "Not only did we meet our sustainability targets, but the photo documentation provided by JalSeva added immense value to our annual report.",
       name: "Pratima Ghalsasi",
       position: "Sustainability Officer",
       company: "Global Manufacturing",
-      image: "/images/pratima-ghalsasi.jpg"
+      image: "/images/priya-krishna.jpg"
     }
   ];
 
