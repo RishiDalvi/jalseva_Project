@@ -15,14 +15,14 @@ const TestimonialsSection = () => {
       name: "Priya Krishna",
       position: "Marketing Head",
       company: "Gigante Technologies",
-      image: "https://media.licdn.com/dms/image/v2/C4E03AQGWfwhjQFTkiA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597946580843?e=1758153600&v=beta&t=0bqgW0avkF-5yg_G1N8WU-huL-r_hpLfHOIqomB6Mzw?auto=format&fit=crop&q=80&w=200&h=200"
+      image: "https://ibb.co/WWj0GrYG?auto=format&fit=crop&q=80&w=200&h=200"
     },
     {
       quote: "Not only did we meet our sustainability targets, but the photo documentation provided by JalSeva added immense value to our annual report.",
       name: "Pratima Ghalsasi",
       position: "Sustainability Officer",
       company: "Global Manufacturing",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQHJEaI-5orZWw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686740734111?e=1758153600&v=beta&t=pxvUwwd58peZ0GAnVOFnkvPJOI9aa_ZxgA2iph7SzqU?auto=format&fit=crop&q=80&w=200&h=200"
+      image: "https://ibb.co/wZ8GfFTP?auto=format&fit=crop&q=80&w=200&h=200"
     }
   ];
 
