@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <strong>Live App ➤</strong> <a href="https://jalseva.netlify.app/">jalseva.netlify.app</a> • 
-  <strong>GitHub ➤</strong> <a href="https://github.com/RishiDalvi/jalseva_Project">RishiDalvi/jalseva_Project</a>
+  <strong>Live App ➔</strong> <a href="https://jalseva.netlify.app/">jalseva.netlify.app</a> •
+  <strong>GitHub ➔</strong> <a href="https://github.com/RishiDalvi/jalseva_Project">RishiDalvi/jalseva_Project</a>
 </p>
 
 ---
@@ -21,25 +21,25 @@
 
 ## 🔥 Highlights
 
-- Transparent CSR project management
-- Real-time impact dashboard
-- Verified success stories from communities
-- Easy onboarding for donors and NGOs
-- Fully responsive & accessible UI
+* Transparent CSR project management
+* Real-time impact dashboard
+* Verified success stories from communities
+* Easy onboarding for donors and NGOs
+* Fully responsive & accessible UI
 
 ---
 
 ## 🚀 Tech Stack
 
-| Tech            | Description                              |
-|-----------------|------------------------------------------|
-| Vite            | Superfast bundler & development server   |
-| TypeScript      | Type-safe development                    |
-| React           | Component-based UI                       |
-| Tailwind CSS    | Utility-first styling                    |
-| shadcn-ui       | Prebuilt elegant UI components           |
-| React Router    | For client-side routing                  |
-| Netlify         | Deployment platform                      |
+| Tech         | Description                            |
+| ------------ | -------------------------------------- |
+| Vite         | Superfast bundler & development server |
+| TypeScript   | Type-safe development                  |
+| React        | Component-based UI                     |
+| Tailwind CSS | Utility-first styling                  |
+| shadcn-ui    | Prebuilt elegant UI components         |
+| React Router | For client-side routing                |
+| Netlify      | Deployment platform                    |
 
 ---
 
@@ -85,37 +85,44 @@ jalseva_Project/
 
 > 💡 This structure ensures a clean separation of concerns for scalability and maintainability.
 
+---
 
 ## 🖼️ UI Screenshots
 
 > Here's a quick look at the platform 👇
 
 ### 🏠 Landing Page
+
 ![Landing Page](./screenshots/landing.png)
 
 ---
 
 ### 📖 About Us
+
 ![About](./screenshots/about.png)
 
 ---
 
 ### ⚙️ How It Works
+
 ![How It Works](./screenshots/howItWorks.png)
 
 ---
 
 ### 🌟 Success Stories
+
 ![Success Stories](./screenshots/successStories.png)
 
 ---
 
 ### 📊 Impact Dashboard
+
 ![Impact Dashboard](./screenshots/impactDashboard.png)
 
 ---
 
 ### 🔗 Footer with Privacy and Terms
+
 ![Footer](./screenshots/footer.png)
 
 ---
@@ -130,22 +137,19 @@ Most organizations fund NGOs without an interactive medium to see their impact o
 
 ## ✅ Solution by JALseva
 
-- 📌 Platform for listing verified water-based CSR projects.
-- 🧾 Real-time tracking, updates, and dashboards.
-- 🏆 Reward systems, recognition badges for corporates.
-- 🌍 Success stories to inspire and promote further impact.
+* 📌 Platform for listing verified water-based CSR projects.
+* 🧾 Real-time tracking, updates, and dashboards.
+* 🏆 Reward systems, recognition badges for corporates.
+* 🌍 Success stories to inspire and promote further impact.
 
 ---
-                 |
 
 ## 🎯 Future Scope
-Integration with Government APIs
 
-Blockchain-based impact verification
-
-CSR Impact Leaderboard across India
-
-Real-time Chatbot support
+* Integration with Government APIs
+* Blockchain-based impact verification
+* CSR Impact Leaderboard across India
+* Real-time Chatbot support
 
 ---
 
@@ -159,10 +163,10 @@ This project uses **Vite**, **TypeScript**, **React**, **Tailwind CSS**, and **s
 
 Make sure you have the following installed:
 
-- **Node.js** (v18+ recommended)
-- **Bun** (optional, if using Bun for package management)  
-  👉 Install from: https://bun.sh/docs/installation
-- **Git**
+* **Node.js** (v18+ recommended)
+* **Bun** (optional, if using Bun for package management)
+  👉 Install from: [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
+* **Git**
 
 ---
 
@@ -178,11 +182,13 @@ cd jalseva_Project
 2. **Install dependencies**
 
 Using Bun (preferred):
+
 ```bash
 bun install
 ```
 
 Or using npm:
+
 ```bash
 npm install
 ```
@@ -190,11 +196,13 @@ npm install
 3. **Start the development server**
 
 Using Bun:
+
 ```bash
 bun run dev
 ```
 
 Or using npm:
+
 ```bash
 npm run dev
 ```
@@ -205,7 +213,7 @@ Visit: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-### 🛠 Build for Production
+### 🛠️ Build for Production
 
 To generate a production-ready build:
 
@@ -231,7 +239,7 @@ npm run preview
 
 ---
 
-### 🧼 Linting
+### 🪤 Linting
 
 To check for code quality and formatting:
 
@@ -257,24 +265,27 @@ Ensure your keys are stored securely and never committed to GitHub.
 
 ---
 
-
 ## 🤝 Contributing
+
 Contributions are welcome! Feel free to fork and submit PRs.
+
+```bash
 # Fork the project
 # Make changes
 # Push your feature branch
 # Create Pull Request
+```
 
 ---
 
 ## 📃 License
+
 This project is licensed under the MIT License.
 
-----
+---
 
 ## 📬 Connect With Us
-Founder: Rushikesh Dalavi
 
-Email: connect.team.jalseva@gmail.com
-
-LinkedIn: Kaliyug Technologies
+**Founder**: Rushikesh Dalavi
+**Email**: [connect.team.jalseva@gmail.com](mailto:connect.team.jalseva@gmail.com)
+**LinkedIn**:<strong><a href="https://www.linkedin.com/in/rushikesh-dalavi/">Rushikesh Dalavi</a></strong> 
