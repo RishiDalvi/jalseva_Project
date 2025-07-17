@@ -280,7 +280,8 @@ Contributions are welcome! Feel free to fork and submit PRs.
 
 ## 📃 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
+
 
 ---
 
