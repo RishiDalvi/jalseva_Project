@@ -117,53 +117,6 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Partner Logos */}
-        <div className="mt-16">
-          <p className="text-center font-inter text-gray-500 mb-6">Trusted by leading brands</p>
-          <div className="flex flex-wrap justify-center gap-8">
-            {/* Updated brand logos */}
-            <div className="w-32 h-16 bg-gray-100 rounded-md flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=160&q=80"
-                alt="Nisarg Constructions"
-                className="h-12 object-contain"
-              />
-              <span className="ml-2 text-gray-600 font-montserrat text-xs">Nisarg Constructions</span>
-            </div>
-            <div className="w-32 h-16 bg-gray-100 rounded-md flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=160&q=80"
-                alt="Vaidik Hospital Group"
-                className="h-12 object-contain"
-              />
-              <span className="ml-2 text-gray-600 font-montserrat text-xs">Vaidik Hospital Group</span>
-            </div>
-            <div className="w-32 h-16 bg-gray-100 rounded-md flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=160&q=80"
-                alt="NextGen Institutes"
-                className="h-12 object-contain"
-              />
-              <span className="ml-2 text-gray-600 font-montserrat text-xs">NextGen Institutes</span>
-            </div>
-            <div className="w-32 h-16 bg-gray-100 rounded-md flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=160&q=80"
-                alt="AdSpecta"
-                className="h-12 object-contain"
-              />
-              <span className="ml-2 text-gray-600 font-montserrat text-xs">AdSpecta</span>
-            </div>
-            <div className="w-32 h-16 bg-gray-100 rounded-md flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=160&q=80"
-                alt="BITFIT INDIA"
-                className="h-12 object-contain"
-              />
-              <span className="ml-2 text-gray-600 font-montserrat text-xs">BITFIT INDIA</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

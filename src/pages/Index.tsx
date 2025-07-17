@@ -7,6 +7,7 @@ import HowItWorksSection from "../components/HowItWorksSection";
 import BenefitsSection from "../components/BenefitsSection";
 import ImpactDashboardSection from "../components/ImpactDashboardSection";
 import TestimonialsSection from "../components/TestimonialsSection";
+import TrustedBrandsSection from "../components/TrustedBrandsSection";
 import StartCampaignSection from "../components/StartCampaignSection";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -43,6 +44,7 @@ const Index = () => {
       <BenefitsSection />
       <ImpactDashboardSection />
       <TestimonialsSection />
+      <TrustedBrandsSection />
       <StartCampaignSection />
       <Footer />
       <ScrollToTop />
