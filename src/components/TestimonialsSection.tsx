@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
       name: "Pratima Ghalsasi",
       position: "Sustainability Officer",
       company: "Global Manufacturing",
-      image: "https://ibb.co/wZ8GfFTP?auto=format&fit=crop&q=80&w=200&h=200"
+      image: "https://ibb.co/wZ8GfFTP"
     }
   ];
 
