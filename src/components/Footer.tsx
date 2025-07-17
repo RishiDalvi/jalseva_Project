@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { Linkedin, Instagram, Download } from 'lucide-react';
 import { Button } from './ui/button';
 import DownloadProposalModal from './DownloadProposalModal';
+import PrivacyPolicyModal from './PrivacyPolicyModal';
+import TermsOfServiceModal from './TermsOfServiceModal';
 
 const Footer = () => {
   const [isProposalModalOpen, setIsProposalModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
@@ -96,8 +100,18 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} JalSeva. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 text-sm font-inter hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-500 text-sm font-inter hover:text-white transition-colors">Terms of Service</a>
+              <button 
+                onClick={() => setIsPrivacyModalOpen(true)}
+                className="text-gray-500 text-sm font-inter hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button 
+                onClick={() => setIsTermsModalOpen(true)}
+                className="text-gray-500 text-sm font-inter hover:text-white transition-colors"
+              >
+                Terms of Service
+              </button>
               <span className="text-gray-500 text-sm font-inter">Powered by Kaliyug Technologies</span>
             </div>
           </div>
@@ -107,6 +121,16 @@ const Footer = () => {
       <DownloadProposalModal 
         isOpen={isProposalModalOpen}
         onClose={() => setIsProposalModalOpen(false)}
+      />
+      
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
+      
+      <TermsOfServiceModal 
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
       />
     </footer>
   );
